@@ -31,6 +31,23 @@ num_increased <- most_recent %>%
 num_countries <- length(unique(co2_data$country))
 percent_increased <- round(num_increased / num_countries, 3) * 100
 
+# Average CO2 emissions per capita from different sources by year
+avg_sources <- co2_data %>%
+  group_by(year) %>%
+  summarise(avg_cement = mean(cement_co2_per_capita, na.rm = T),
+            avg_coal = mean(coal_co2_per_capita, na.rm = T),
+            avg_flaring = mean(flaring_co2_per_capita, na.rm = T),
+            avg_gas = mean(gas_co2_per_capita, na.rm = T),
+            avg_oil = mean(oil_co2_per_capita, na.rm = T))
+
+colnames(avg_sources) = c("Year", "Cement", "Coal", "Flaring", "Gas", "Oil")
+
 server <- function(input, output) {
-  
+  output$line <- renderPlotly({
+    co2_plot <- ggplot(data = avg_sources) +
+      geom_line(mapping = aes_string(x = 'Year', y = avg_sources[[input$source]]), color = input$color) +
+      labs(title = paste("Average CO2 Emissions per Capita from", input$source, "Over Time"),
+           y = paste("Average CO2 Emissions\nper Capita from", input$source,"in Million Tonnes\n"))
+    ggplotly(co2_plot)
+  })
 }

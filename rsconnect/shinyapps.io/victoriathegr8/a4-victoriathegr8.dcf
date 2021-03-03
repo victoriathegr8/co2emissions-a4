@@ -1,0 +1,13 @@
+name: a4-victoriathegr8
+title: a4-victoriathegr8
+username:
+account: victoriathegr8
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3729332
+bundleId: 4296091
+url: https://victoriathegr8.shinyapps.io/a4-victoriathegr8/
+when: 1614790333.63563
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md

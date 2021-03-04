@@ -50,23 +50,6 @@ server <- function(input, output) {
            y = paste("Average CO2 Emissions\nper Capita from", input$source,"in Million Tonnes\n"))
     ggplotly(co2_plot)
   })
-  output$intro_text <- renderText({
-    paste(
-    "Carbon dioxide, or CO2, is the primary greenhouse gas emitted
-    through human activities, as well as the primary driver of global
-    climate change. This page will analyze the following variables
-    from the Our World in Data dataset on CO2 emissions:",
-    "1. CO2 Growth Percent (co2_growth_pct) - percentage change in CO2 
-    emissions from one year relative to the previous year",
-    "2. Co2 Growth Absolute (co2_growth_abs) - annual change in CO2
-    emissions from one year relative to the previous year,
-    measured in million tonnes",
-    "3. Consumption CO2 (consumption_co2) - annual consumption-based
-    CO2 emissions, measured in million tonnes per year",
-    "4. CO2 Per Capita (co2_per_capita) - average per capita CO2
-    emissions, measured in tonnes per year.", sep = "\n"
-    )
-  })
   output$summary_text <- renderText({
     paste0("The average CO2 emissions change in the most recent year from
     the year prior is ", avg_growth_pct, "%, or ", avg_growth_abs,

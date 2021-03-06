@@ -1,4 +1,4 @@
-# Assignment 4: Climate Change
-In this assignment, you'll build an interactive Shiny application exploring CO2 emissions data. You'll need to create all of the necessary files for your work (e.g., `app.R`, `app_ui.R`, `app_server.R`). See Canvas for details.
-
-Once you have completed your work, make sure to host your application on https://www.shinyapps.io/. 
+# CO2 Emissions
+Data Analysis and Visualisation using R - packages ggplot, plotly, and shiny.
+Using CO2 emissions data from [this dataset](https://github.com/owid/co2-data/) by Our World in Data.
+View completed Shiny website with interactive visualisation [at this link.](https://victoriathegr8.shinyapps.io/a4-victoriathegr8/)
